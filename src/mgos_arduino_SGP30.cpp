@@ -6,7 +6,7 @@
  */
 
 #include <math.h>
-#include "mgos_arduino_sgp30.h"
+#include "mgos_arduino_SGP30.h"
 
 Adafruit_SGP30 *mgos_sgp30_create_i2c() {
   return new Adafruit_SGP30();
