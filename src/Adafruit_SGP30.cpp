@@ -52,14 +52,11 @@ Adafruit_SGP30::Adafruit_SGP30() {
     @returns True if SGP30 found on I2C, False if something went wrong!
 */
 /**************************************************************************/
-boolean Adafruit_SGP30::begin(TwoWire *theWire) {
-  _i2caddr = SGP30_I2CADDR_DEFAULT;
-  if (theWire == NULL) {
-    _i2c = &Wire;
-  } else {
-    _i2c = theWire;
-  }
+boolean Adafruit_SGP30::begin(void) {
+	
 
+  _i2caddr = SGP30_I2CADDR_DEFAULT;
+  
   _i2c->begin();
 
   

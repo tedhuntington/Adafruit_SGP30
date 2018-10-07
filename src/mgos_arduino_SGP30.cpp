@@ -19,9 +19,9 @@ void mgos_sgp30_close(Adafruit_SGP30 *sgp) {
   }
 }
 
-int mgos_sgp30_begin(Adafruit_SGP30 *sgp, int addr) {
+int mgos_sgp30_begin(Adafruit_SGP30 *sgp) {
   if (sgp == nullptr) return 0;
-  return sgp->begin(addr);
+  return sgp->begin();
 }
 
 void mos_spg30_IAQinit(Adafruit_SGP30 *sgp) {

@@ -61,7 +61,7 @@ void mgos_SGP30_close(Adafruit_SGP30 *sgp);
  * i.e. the chip ID is incorrect.
  * Returns 1 otherwise.
  */
-int mgos_SGP30_begin(Adafruit_SGP30 *sgp, int addr);
+int mgos_SGP30_begin(Adafruit_SGP30 *sgp);
 
 /*
  * Take a new measurement (only possible in forced mode).
