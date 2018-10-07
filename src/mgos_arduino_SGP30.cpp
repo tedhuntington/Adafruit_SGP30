@@ -12,15 +12,6 @@ Adafruit_SGP30 *mgos_sgp30_create_i2c() {
   return new Adafruit_SGP30();
 }
 
-Adafruit_SGP30 *mgos_sgp30_create_spi(int cspin) {
-  return new Adafruit_SGP30(cspin);
-}
-
-Adafruit_SGP30 *mgos_sgp30_create_spi_full(int cspin, int mosipin,
-                                             int misopin, int sckpin) {
-  return new Adafruit_SGP30(cspin, mosipin, misopin, sckpin);
-}
-
 void mgos_sgp30_close(Adafruit_SGP30 *sgp) {
   if (sgp != nullptr) {
     delete sgp;
