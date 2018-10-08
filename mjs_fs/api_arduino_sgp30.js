@@ -42,41 +42,56 @@ let Adafruit_SGP30 = {
     },
 
     // ## **`mysgp.IAQinit()`**
-    // Take a new measurement (only possible in forced mode).
+/*! 
+    @brief  Commands the sensor to begin the IAQ algorithm. Must be called after startup.
+    @returns True if command completed successfully, false if something went wrong!
+*/
     IAQinit: function() {
       return Adafruit_SGP30._iaqi(this.sgp);
     },
 
-    // ## **`mysgp.readTemperature()`**
-    // Return the temperature from the sensor in degrees C or
+	//IAQMeasure
+/*! 
+    @brief  Commands the sensor to take a single eCO2/VOC measurement. Places results in {@link TVOC} and {@link eCO2}
+    @returns True if command completed successfully, false if something went wrong!
+*/
     // `Adafruit_SGP30.RES_FAIL` in case of a failure.
     IAQmeasure: function() {
       // C-functions output value of “1234” equals 12.34 Deg.
       return Adafruit_SGP30._iaqm(this.sgp) ;/// 100.0;
     },
 
-    // ## **`mysgp.readPressure()`**
-    // Returns the pressure from the sensor in hPa
-    // or `Adafruit_SGP30.RES_FAIL` in case of a failure.
-    getIAQBaseline: function(*eco2_base, *tvoc_base) {
+    // ## **`getIAQBaseline()`**
+/*! 
+    @brief Request baseline calibration values for both CO2 and TVOC IAQ calculations. Places results in parameter memory locaitons.
+    @param eco2_base A pointer to a uint16_t which we will save the calibration value to
+    @param tvoc_base A pointer to a uint16_t which we will save the calibration value to
+    @returns True if command completed successfully, false if something went wrong!
+*/    getIAQBaseline: function(*eco2_base, *tvoc_base) {
       // C-functions output value of “1234” equals 12.34 hPa.
       return Adafruit_SGP30._giacb(this.sgp,base,tvoc_base);// / 10000.0;
     },
 
-    // ## **`mysgp.readHumidity()`**
-    // Returns the humidity from the sensor in %RH
-    // or `Adafruit_SGP30.RES_FAIL` in case of a failure.
+    // ## **`setIAQBaseline()`**
+
+/*! 
+    @brief Assign baseline calibration values for both CO2 and TVOC IAQ calculations.
+    @param eco2_base A uint16_t which we will save the calibration value from
+    @param tvoc_base A uint16_t which we will save the calibration value from
+    @returns True if command completed successfully, false if something went wrong!
+*/
     setIAQBaseline: function(eco2_base, tvoc_base) {
       // C-functions output value of “1234” equals 12.34 %RH.
       return Adafruit_SGP30._siaqb(this.sgp,eco2_base,tvoc_base);// / 100.0;
     },
 
-    // ## **`mysgp.readAltitude(seaLevel)`**
-    // Returns the altitude in meters calculated from the specified
-    // sea-level pressure `seaLevel` (in hPa)
-    // or `Adafruit_SGP30.RES_FAIL` in case of a failure.
-    // http://www.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf, P.16
-    SetHumidity: function(absolute_humidity) {
+    // ## **`mysgp.SetHumidity(absolute_humidity)`**
+/*!
+    @brief Set the absolute humidity value [mg/m^3] for compensation to increase precision of TVOC and eCO2.
+    @param absolute_humidity A uint32_t [mg/m^3] which we will be used for compensation. If the absolute humidity is set to zero, humidity compensation will be disabled.
+    @returns True if command completed successfully, false if something went wrong!
+*/  
+  SetHumidity: function(absolute_humidity) {
       // C-functions input and output values of “1234” equals 12.34.
       return Adafruit_SGP30._sh(this.sgp, absolute_humidity);//Math.round(lvl * 100.0)) / 100.0;
     },
