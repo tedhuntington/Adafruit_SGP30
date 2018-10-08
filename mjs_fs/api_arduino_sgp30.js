@@ -12,9 +12,9 @@ let Adafruit_SGP30 = {
   _begin: ffi('int mgos_sgp30_begin(void *)'),
   _iaqi: ffi('void mgos_spg30_IAQinit(void *)'),
   _iaqm: ffi('void mgos_spg30_IAQmeasure(void *)'),
-  _giacb: ffi('void mgos_spg30_getIAQBaseline(Adafruit_SGP30 *sgp,uint16_t *eco2_base, uint16_t *tvoc_base) {'),
-  _siaqb: ffi('void mgos_setIAQBaseline(Adafruit_SGP30 *sgp,uint16_t eco2_base, uint16_t tvoc_base) {'),
-  _sh: ffi('void mgos_setHumidity(Adafruit_SGP30 *sgp,uint32_t absolute_humidity) {'),
+  _giacb: ffi('void mgos_spg30_getIAQBaseline(void *,int, int)'),
+  _siaqb: ffi('void mgos_setIAQBaseline(void *,int, int)'),
+  _sh: ffi('void mgos_setHumidity(void *,int)'),
   
   // ## **`Adafruit_SGP30.createI2C(i2caddr)`**
   // Create a SGP30 instance on I2C bus with the given address `i2caddr`.
