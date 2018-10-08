@@ -91,7 +91,7 @@ let Adafruit_SGP30 = {
     @param absolute_humidity A uint32_t [mg/m^3] which we will be used for compensation. If the absolute humidity is set to zero, humidity compensation will be disabled.
     @returns True if command completed successfully, false if something went wrong!
 */  
-  SetHumidity: function(absolute_humidity) {
+  setHumidity: function(absolute_humidity) {
       // C-functions input and output values of “1234” equals 12.34.
       return Adafruit_SGP30._sh(this.sgp, absolute_humidity);//Math.round(lvl * 100.0)) / 100.0;
     },
