@@ -67,7 +67,7 @@ let Adafruit_SGP30 = {
     @param eco2_base A pointer to a uint16_t which we will save the calibration value to
     @param tvoc_base A pointer to a uint16_t which we will save the calibration value to
     @returns True if command completed successfully, false if something went wrong!
-*/    getIAQBaseline: function(*eco2_base, *tvoc_base) {
+*/    getIAQBaseline: function(eco2_base, tvoc_base) {
       // C-functions output value of “1234” equals 12.34 hPa.
       return Adafruit_SGP30._giacb(this.sgp,base,tvoc_base);// / 10000.0;
     },
