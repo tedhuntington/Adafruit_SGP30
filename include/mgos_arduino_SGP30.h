@@ -34,7 +34,7 @@ extern "C" {
  * Initialize Adafruit_SGP30 library for i2c.
  * Return value: OneWire handle opaque pointer.
  */
-Adafruit_sgp30 *mgos_SGP30_create_i2c();
+Adafruit_SGP30 *mgos_sgp30_create_i2c();
 
 /*
  * Close Adafruit_SGP30 handle. Return value: none.
