@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 
-#ifndef CS_MOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_
-#define CS_MOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_
+#ifndef CS_MGOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_
+#define CS_MGOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_
 
 #ifdef __cplusplus
 #include "Adafruit_SGP30.h"
@@ -34,12 +34,12 @@ extern "C" {
  * Initialize Adafruit_SGP30 library for i2c.
  * Return value: OneWire handle opaque pointer.
  */
-Adafruit_SGP30 *mgos_SGP30_create_i2c();
+Adafruit_sgp30 *mgos_SGP30_create_i2c();
 
 /*
  * Close Adafruit_SGP30 handle. Return value: none.
  */
-void mgos_SGP30_close(Adafruit_SGP30 *sgp);
+void mgos_sgp30_close(Adafruit_SGP30 *sgp);
 
 /*
  * Initialize the sensor with given parameters/settings.
@@ -47,7 +47,7 @@ void mgos_SGP30_close(Adafruit_SGP30 *sgp);
  * i.e. the chip ID is incorrect.
  * Returns 1 otherwise.
  */
-int mgos_SGP30_begin(Adafruit_SGP30 *sgp);
+int mgos_sgp30_begin(Adafruit_SGP30 *sgp);
 
 void mgos_spg30_IAQinit(Adafruit_SGP30 *sgp);
 
@@ -63,4 +63,4 @@ void mgos_setHumidity(Adafruit_SGP30 *sgp,uint32_t absolute_humidity);
 }
 #endif
 
-#endif /* CS_MOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_ */
+#endif /* CS_MGOS_LIBS_ARDUINO_ADAFRUIT_SGP30_SRC_MGOS_ARDUINO_SGP30_H_ */
