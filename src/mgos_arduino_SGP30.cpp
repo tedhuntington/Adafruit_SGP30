@@ -24,27 +24,27 @@ int mgos_sgp30_begin(Adafruit_SGP30 *sgp) {
   return sgp->begin();
 }
 
-void mos_spg30_IAQinit(Adafruit_SGP30 *sgp) {
+void mgos_spg30_IAQinit(Adafruit_SGP30 *sgp) {
   if (sgp == nullptr) return;
   sgp->IAQinit();
 }
 
-void mos_spg30_IAQmeasure(Adafruit_SGP30 *sgp) {
+void mgos_spg30_IAQmeasure(Adafruit_SGP30 *sgp) {
   if (sgp == nullptr) return;
   sgp->IAQmeasure();
 }
 
-void mos_spg30_getIAQBaseline(Adafruit_SGP30 *sgp,uint16_t *eco2_base, uint16_t *tvoc_base) {
+void mgos_spg30_getIAQBaseline(Adafruit_SGP30 *sgp,uint16_t *eco2_base, uint16_t *tvoc_base) {
   if (sgp == nullptr) return;
   sgp->getIAQBaseline(eco2_base, tvoc_base);
 }
 
-void mos_setIAQBaseline(Adafruit_SGP30 *sgp,uint16_t eco2_base, uint16_t tvoc_base) {
+void mgos_setIAQBaseline(Adafruit_SGP30 *sgp,uint16_t eco2_base, uint16_t tvoc_base) {
   if (sgp == nullptr) return;
   sgp->setIAQBaseline(eco2_base,tvoc_base);
 }
 
-void mos_setHumidity(Adafruit_SGP30 *sgp,uint32_t absolute_humidity) {
+void mgos_setHumidity(Adafruit_SGP30 *sgp,uint32_t absolute_humidity) {
   if (sgp == nullptr) return;
   sgp->setHumidity(absolute_humidity);
 }
